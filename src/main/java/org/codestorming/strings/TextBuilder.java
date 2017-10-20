@@ -361,7 +361,7 @@ public class TextBuilder implements CharSequence, Serializable {
 	}
 
 	private void ensureCapacity(int addition) {
-		int minCapacity = length + addition;
+		final int minCapacity = length + addition;
 		if (minCapacity > chars.length) {
 			int newCapacity = (int) (1.75 * chars.length) + 1;
 			if (newCapacity < minCapacity) {
@@ -382,9 +382,6 @@ public class TextBuilder implements CharSequence, Serializable {
 	public boolean equals(Object obj) {
 		if (obj == this) {
 			return true;
-		}// else
-		if (obj == null) {
-			return false;
 		}// else
 		if (!(obj instanceof CharSequence)) {
 			return false;
